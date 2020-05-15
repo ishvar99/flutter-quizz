@@ -18,7 +18,7 @@ class _HomeState extends State<Home> {
           Expanded(
             child: Center(
               child: Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(10.0),
                 child: Text(
                   'This is where question text will go out',
                   textAlign: TextAlign.center,
@@ -31,9 +31,9 @@ class _HomeState extends State<Home> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(10.0),
                 child: FlatButton(
-                  onPressed: ()=>print('true'),
+                  onPressed: () => print('true'),
                   child: Container(
                     child: Center(
                       child: Text(
@@ -47,7 +47,7 @@ class _HomeState extends State<Home> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.all(10.0),
                 child: FlatButton(
                   child: Container(
                     child: Center(
@@ -63,6 +63,19 @@ class _HomeState extends State<Home> {
               )
             ],
           ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(vertical: 15.0, horizontal: 20.0),
+            child: Row(
+              children: <Widget>[
+                Icon(
+                  Icons.check,
+                  color: Colors.green,
+                ),
+                Icon(Icons.close, color: Colors.red)
+              ],
+            ),
+          )
         ],
       ),
     );
