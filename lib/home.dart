@@ -57,9 +57,6 @@ class _HomeState extends State<Home> {
       scoreKeeper = [];
     });
   }
-  int calculateScore(){
-
-  }
   void updateScoreKeeper(ans) {
     setState(() {
       if (questions[questionNumber]['answer'] == ans) {
