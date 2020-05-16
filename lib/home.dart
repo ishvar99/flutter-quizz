@@ -9,6 +9,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int questionNumber = 0;
+  int score=0;
   bool showScore = false;
   List<Icon> scoreKeeper = [];
   List<Map<dynamic, dynamic>> questions = [
@@ -30,11 +31,28 @@ class _HomeState extends State<Home> {
     {
       'statement': 'The Statue of Liberty was a gift from France',
       'answer': true
+    },
+    {
+      'statement':'Chocolate can be lethal to dogs.',
+      'answer':true
+    },
+    {
+      'statement':'Brazil has won more World Cup (soccer) championships than any other country.',
+      'answer':true
+    }
+    ,{
+    'statement':'"Magma" is the scientific name for lava.',
+      'answer':false
+    },
+    {
+      'statement':'The blue whale, the world\'s largest animal, has teeth 12 inches long.',
+      'answer':false
     }
   ];
   void reset() {
     setState(() {
       showScore=false;
+      score=0;
       questionNumber = 0;
       scoreKeeper = [];
     });
@@ -45,6 +63,7 @@ class _HomeState extends State<Home> {
   void updateScoreKeeper(ans) {
     setState(() {
       if (questions[questionNumber]['answer'] == ans) {
+        score++;
         scoreKeeper.add(
           Icon(
             Icons.check,
@@ -77,7 +96,7 @@ class _HomeState extends State<Home> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text('YOUR SCORE',style:Theme.of(context).textTheme.display1,),
+                  Text('YOUR SCORE: $score out of 10',style:Theme.of(context).textTheme.display1,),
                   FlatButton(child: Text('Play Again',style: Theme.of(context).textTheme.display1,),
                       onPressed: () => reset())
                 ],
